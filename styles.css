@@ -1,0 +1,225 @@
+:root {
+    --background: #fafbfc;
+    --primary: #222831;
+    --accent: #393e46;
+    --highlight: #00adb5;
+    --text: #222831;
+    --muted: #8b8b8b;
+    --card: #fff;
+    --border: #ececec;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--highlight);
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+nav a.active, nav a:hover {
+    background: var(--highlight);
+    color: #fff;
+}
+
+main {
+    flex: 1;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.hero {
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+}
+.hero h1 {
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+.hero p {
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+.featured-products, .products-list {
+    margin-top: 2.5rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.product-card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 4px 24px rgba(0,173,181,0.07);
+}
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+.product-card h3 {
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+}
+.product-card p {
+    color: var(--muted);
+    font-size: 1rem;
+}
+.product-card .tag {
+    display: inline-block;
+    padding: 0.2em 0.7em;
+    border-radius: 16px;
+    font-size: 0.85em;
+    margin-top: 0.7em;
+    color: #fff;
+}
+.tag.classic { background: #8b8b8b; }
+.tag.modern { background: var(--highlight); }
+.tag.embroidered { background: var(--accent); }
+
+.categories {
+    display: flex;
+    gap: 0.7rem;
+    margin-bottom: 1.4rem;
+}
+.categories button {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.4em 1.3em;
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 0.98em;
+    transition: background 0.18s, color 0.18s;
+}
+.categories button.active, .categories button:hover {
+    background: var(--highlight);
+    color: #fff;
+    border-color: var(--highlight);
+}
+
+.about-section, .contact-section {
+    max-width: 600px;
+    margin: 2.5rem auto;
+    padding: 2rem;
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.about-section h1, .contact-section h1 {
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+}
+.about-section p {
+    margin-bottom: 1.1rem;
+    color: var(--primary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.contact-form label {
+    color: var(--accent);
+    font-weight: 500;
+}
+.contact-form input, .contact-form textarea {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.7em;
+    font-size: 1em;
+    background: #f7f7f7;
+    resize: none;
+}
+.contact-form button {
+    background: var(--highlight);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7em 1.3em;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.18s;
+}
+.contact-form button:hover {
+    background: var(--accent);
+}
+
+.business-details {
+    margin-top: 2rem;
+    color: var(--muted);
+    font-size: 1.05em;
+}
+.business-details a {
+    color: var(--highlight);
+    text-decoration: none;
+}
+.business-details a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: auto;
+    background: var(--card);
+    color: var(--muted);
+    text-align: center;
+    padding: 1.2rem 0 0.7rem 0;
+    border-top: 1px solid var(--border);
+    font-size: 1em;
+}
